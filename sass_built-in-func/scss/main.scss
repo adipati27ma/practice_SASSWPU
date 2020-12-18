@@ -1,0 +1,66 @@
+$warna-dasar: #fa8072;
+
+h1,
+h2 {
+  // color: $warna-dasar;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3em;
+  text-align: center;
+  background-color: aliceblue;
+}
+
+// Built-in Modules: Color
+// adjust-color($color: null, $red: 1, $green: 2, $blue: 3, $hue: 0, $saturation: 0%, $lightness: 0%, $alpha: 1.0)
+h1 {
+  color: adjust-color($color: $warna-dasar, $green: 50, $blue: 80, $red: -10);
+}
+
+// adjust-hue($color, $degree);
+// h2 {
+//   color: adjust-hue($color: $warna-dasar, $degrees: 30deg); // roda warna diputer ke kanan, kalo minus ke kiri
+// }
+
+// complement($color)
+h2 {
+  color: complement($warna-dasar); // lawan bersebrangan di roda warna, 180deg kalo di adjust-hue
+}
+
+// darken($color, $amount)
+// h1 {
+//   color: darken($warna-dasar, $amount: 10%);
+// }
+
+// lighten($color, $amount)
+h1 {
+  color: lighten($warna-dasar, $amount: 10%);
+}
+
+// saturate($color, $amount)
+// h1 {
+//   color: saturate($color: $warna-dasar, $amount: 20%)
+// }
+
+// desaturate($color, $amount)
+// h1 {
+//   color: desaturate($color: $warna-dasar, $amount: 20%)
+// }
+
+// grayscale($color) --> ini sama dengan desaturate($color, 100%)
+// h1 {
+//   color: grayscale($color: $warna-dasar)
+// }
+
+// mix($color1, $color2, $weight: 50%) // defaultnya 50% (seimbang)
+// h1 {
+//   color: mix($warna-dasar, blue, $weight: 80%); // warna-dasar 80%, blue 30%
+// }
+
+// fade-in($color, $amount)
+// h1 {
+//   color: fade-in($color: $warna-dasar, $amount: 0.5); // menambah opacity warna
+// }
+
+// fade-out($color, $amount)
+// h1 {
+//   color: fade-out($color: $warna-dasar, $amount: 0.4); // mengurangi opacity warna
+// }
