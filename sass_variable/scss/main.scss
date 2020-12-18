@@ -1,0 +1,27 @@
+// SASS Variables
+$secondary-color: #f2cc8f;
+$text-color: #e07a5f;
+$primary-color:red;
+
+body {
+  $primary-color: lightblue !global; // jika sudah ada variable global dgn nama sama, akan ditimpa value-nya
+  background-color: $secondary-color;
+}
+
+h1 {
+  color: $text-color;
+  background-color: $primary-color;
+}
+
+
+// Map
+// $alert-danger: red;
+// $alert-success: green;
+// $alert-warning: orange;
+$alert: ('danger': red,
+  'success': green,
+  'warning': orange);
+
+h1 {
+  color: map-get($map: $alert, $key: 'danger');
+}
