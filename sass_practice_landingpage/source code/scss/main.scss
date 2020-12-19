@@ -1,0 +1,125 @@
+@import "fonts";
+@import "variables";
+@import "mixins";
+
+// Styles
+body {
+  font-family: 'Montserrat', sans-serif;
+
+  &::before {
+    content: "";
+    background-image: url(../images/bg.png);
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: 60vmax;
+    opacity: .85;
+    position: absolute; // ini BISA SANGAT BERMASALAH, USAHAKAN JANGAN SEPERTI INI
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    @media screen and (max-width: 992px) {
+      opacity: .4;
+    }
+  }
+}
+
+// navbar
+.custom-nav {
+  .navbar-brand {
+    img {
+      width: 40px;
+      height: 40px;
+      margin-top: -7px;
+    }
+
+    span {
+      color: $primaryColor;
+      font-weight: 700;
+      font-size: 1.4rem;
+      margin-left: .3em;
+    }
+  }
+
+  #navbarNav {
+    .navbar-nav {
+      .nav-item {
+
+        .nav-link {
+          color: $primaryColor;
+          font-weight: 600;
+          text-transform: uppercase;
+          margin-left: 2.5em;
+          transition: .3s color ease;
+
+          &:hover {
+            color: darken($color: $primaryColor, $amount: 15%);
+            transition: .3s color ease;
+            text-decoration: underline;
+          }
+        }
+
+        .btn-sign-up {
+          @include button();
+          font-weight: 600;
+          text-transform: uppercase;
+          margin-left: 2.5em;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    margin-top: 0.3em !important;
+  }
+}
+
+// custom section
+.custom-section {
+  margin-top: 4em;
+  position: absolute; // KARENA BACKGROUND::before diberi pos:absolute!!
+  width: 90vw;
+
+  h2 {
+    font-weight: 700;
+    font-size: 4rem;
+    color: $primaryColor;
+    white-space: nowrap;
+  }
+
+  h3 {
+    font-weight: 400;
+    font-size: 3rem;
+    color: $secondaryColor;
+    white-space: nowrap;
+    line-height: 1;
+  }
+
+  p {
+    color: $textColor;
+    font-size: 1.1rem;
+    margin-top: 3em;
+  }
+
+  a {
+    margin-top: .5em;
+    @include button();
+  }
+
+  @media screen and (max-width: 992px) {
+    margin-top: 0;
+    text-align: center;
+
+    h2,
+    h3,
+    p {
+      text-shadow: 1px 1px 2px rgba($color: $textColor, $alpha: .3);
+      white-space: initial;
+    }
+
+    h3 {
+      color: lighten($color: $textColor, $amount: 10%);
+    }
+  }
+}

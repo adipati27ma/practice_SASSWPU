@@ -1,0 +1,18 @@
+// Mixin
+@mixin button {
+  display: inline-block;
+  color: white;
+  background-color: $primaryColor;
+  border-radius: 2em;
+  padding: .5em 1.5em;
+  text-decoration: none;
+  transition: .3s color ease;
+  border: 1px solid transparent;
+
+  &:hover {
+    color: $primaryColor;
+    border: 1px solid $primaryColor;
+    background-color: transparent;
+    transition: .3s color ease;
+  }
+}
