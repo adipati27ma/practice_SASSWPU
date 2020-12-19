@@ -1,8 +1,10 @@
+@use "variables";
+
 // Mixin
 @mixin button {
   display: inline-block;
   color: white;
-  background-color: $primaryColor;
+  background-color: variables.$primaryColor;
   border-radius: 2em;
   padding: .5em 1.5em;
   text-decoration: none;
@@ -10,8 +12,8 @@
   border: 1px solid transparent;
 
   &:hover {
-    color: $primaryColor;
-    border: 1px solid $primaryColor;
+    color: variables.$primaryColor;
+    border: 1px solid variables.$primaryColor;
     background-color: transparent;
     transition: .3s color ease;
   }
